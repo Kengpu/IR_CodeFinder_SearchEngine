@@ -1,0 +1,97 @@
+{
+  "experiment": "CodeFinder retrieval evaluation",
+  "dataset_documents": 2725,
+  "evaluation_query_count": 40,
+  "qrel_query_count": 40,
+  "judgments": "deterministic seed qrels; not expert human judgments",
+  "judgment_provenance": "data/evaluation/judgment_provenance.json",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "metrics": {
+    "tfidf": {
+      "ndcg@5": 0.7778823299058317,
+      "recall@5": 0.0911495184988552,
+      "ndcg@10": 0.7106546761109229,
+      "recall@10": 0.12346975197703078,
+      "map": 0.374925814880728,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 79.55192500376143,
+      "latency_p95_ms": 89.2548400326632
+    },
+    "bm25": {
+      "ndcg@5": 0.8453641533448678,
+      "recall@5": 0.0954111685162027,
+      "ndcg@10": 0.7773221224278613,
+      "recall@10": 0.13075667993127574,
+      "map": 0.3765236944064772,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 85.4597125086002,
+      "latency_p95_ms": 109.2144250171259
+    },
+    "semantic": {
+      "ndcg@5": 0.8749258635021933,
+      "recall@5": 0.10332175508834536,
+      "ndcg@10": 0.8116551458666896,
+      "recall@10": 0.15005190274397978,
+      "map": 0.46120516321537364,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 38.9067874813918,
+      "latency_p95_ms": 53.35597010562195
+    },
+    "hybrid_rrf": {
+      "ndcg@5": 0.8907190897881071,
+      "recall@5": 0.10488578101641992,
+      "ndcg@10": 0.8291935608085812,
+      "recall@10": 0.15407767110949105,
+      "map": 0.4576745406154128,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 130.2446499816142,
+      "latency_p95_ms": 179.75044512422753
+    },
+    "hybrid_weighted": {
+      "ndcg@5": 0.8961497966066998,
+      "recall@5": 0.10793882727659213,
+      "ndcg@10": 0.8350974619921188,
+      "recall@10": 0.15371070265531667,
+      "map": 0.47818755356135173,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 131.3874899991788,
+      "latency_p95_ms": 145.76019507367164
+    },
+    "hybrid_prf": {
+      "ndcg@5": 0.8610112383290381,
+      "recall@5": 0.10095142043727749,
+      "ndcg@10": 0.7994591636553454,
+      "recall@10": 0.14423604702765622,
+      "map": 0.46087522615175003,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 276.33560498361476,
+      "latency_p95_ms": 414.5115300198082
+    }
+  },
+  "ablation": {
+    "hybrid_prf_disabled": {
+      "ndcg@5": 0.8907190897881071,
+      "recall@5": 0.10488578101641992,
+      "ndcg@10": 0.8291935608085812,
+      "recall@10": 0.15407767110949105,
+      "map": 0.4576745406154128,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 129.59962747991085
+    },
+    "hybrid_prf_enabled": {
+      "ndcg@5": 0.8610112383290381,
+      "recall@5": 0.10095142043727749,
+      "ndcg@10": 0.7994591636553454,
+      "recall@10": 0.14423604702765622,
+      "map": 0.46087522615175003,
+      "judged_queries": 40.0,
+      "latency_mean_ms": 276.33560498361476,
+      "latency_p95_ms": 414.5115300198082
+    }
+  },
+  "limitations": [
+    "Seed qrels are deterministic corpus-derived judgments and must not be interpreted as human relevance assessments.",
+    "Evaluation queries include anchor-derived text; this can favor lexical matching and creates a known selection bias.",
+    "For formal claims, independently judge a held-out query set with multiple assessors."
+  ]
+}

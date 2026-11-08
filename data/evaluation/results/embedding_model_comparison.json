@@ -1,0 +1,24 @@
+{
+  "sentence-transformers/all-MiniLM-L6-v2": {
+    "ndcg@5": 0.8467520166328845,
+    "recall@5": 0.10149548416949088,
+    "ndcg@10": 0.7919191156658145,
+    "recall@10": 0.15331094222842384,
+    "map": 0.4590634726402044,
+    "judged_queries": 40.0,
+    "embedding_dimension": 384,
+    "encoding_and_search_seconds": 143.91789399995469,
+    "model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "sentence-transformers/paraphrase-MiniLM-L3-v2": {
+    "ndcg@5": 0.8021443490218081,
+    "recall@5": 0.09533364517601704,
+    "ndcg@10": 0.7471583480591674,
+    "recall@10": 0.13426831666474456,
+    "map": 0.4156001441158774,
+    "judged_queries": 40.0,
+    "embedding_dimension": 384,
+    "encoding_and_search_seconds": 34.66457499982789,
+    "model": "sentence-transformers/paraphrase-MiniLM-L3-v2"
+  }
+}
